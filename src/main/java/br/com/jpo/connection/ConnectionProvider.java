@@ -5,6 +5,11 @@ import java.util.Properties;
 
 public interface ConnectionProvider {
 
+	public static final String ORACLE_DRIVER 					= "oracle.jdbc.driver.OracleDriver";
+	public static final String MS_SQL_DRIVER 					= "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	public static final String JTDS_DRIVER 						= "net.sourceforge.jtds.jdbc.Driver";
+	public static final String MYSQL_DRIVER						= "com.mysql.jdbc.Driver";
+	
 	public static final String PROVIDER							= "br.com.jpo.connection.provider_name";
 	public static final String USER 							= "br.com.jpo.connection.user";
 	public static final String PASSWORD 						= "br.com.jpo.connection.password";

@@ -21,10 +21,16 @@ public class TesteConectionJDBC {
 	static {
 		properties = new Properties();
 
-		properties.setProperty(ConnectionProvider.USER, "root");
+		// MySQL
+		/*properties.setProperty(ConnectionProvider.USER, "root");
 		properties.setProperty(ConnectionProvider.URL, "jdbc:mysql://localhost:3306/CONTAS");
 		properties.setProperty(ConnectionProvider.DRIVER, "com.mysql.jdbc.Driver");
-		properties.setProperty(ConnectionProvider.PASSWORD, "javaseven");
+		properties.setProperty(ConnectionProvider.PASSWORD, "javaseven");*/
+		
+		properties.setProperty(ConnectionProvider.USER, "DESEXTERNO");
+		properties.setProperty(ConnectionProvider.URL, "jdbc:oracle:thin:@localhost:1570:xe");
+		properties.setProperty(ConnectionProvider.DRIVER, ConnectionProvider.ORACLE_DRIVER);
+		properties.setProperty(ConnectionProvider.PASSWORD, "tecsis");
 	}
 
 	public static void main(String args[]) {
@@ -40,7 +46,7 @@ public class TesteConectionJDBC {
 			 con = JdbcUtils.getConnection(properties);
 
 			if(con != null){
-				System.out.println("Connecting is MySql: "+JdbcUtils.isDataBaseConnection(con, Metadata.MYSQL_DIALECT));
+				System.out.println("Connecting is Oracle: "+JdbcUtils.isDataBaseConnection(con, Metadata.ORACLE_DIALECT));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
